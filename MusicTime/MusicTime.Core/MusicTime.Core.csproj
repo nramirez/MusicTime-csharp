@@ -41,14 +41,17 @@
   <ItemGroup>
     <Compile Include="Abstract\Entities\IEntity.cs" />
     <Compile Include="Abstract\Handlers\Commands\ICommandHandler.cs" />
+    <Compile Include="Abstract\Handlers\Commands\ICommandHandlerValidationDecorator.cs" />
     <Compile Include="Abstract\Queries\IQuery.cs" />
     <Compile Include="Abstract\Storage\IRepository.cs" />
     <Compile Include="Abstract\Storage\IUnitOfWork.cs" />
     <Compile Include="Concrete\Commands\CreatePlaylistCommand.cs" />
+    <Compile Include="Concrete\Commands\ValidatorCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQuery.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\IQueryHandler.cs" />
+    <Compile Include="Concrete\Handlers\Validators\CreatePlaylistCommandValidator.cs" />
     <Compile Include="Entities\Playlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

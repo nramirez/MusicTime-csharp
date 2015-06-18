@@ -1,4 +1,5 @@
-﻿using Ninject.Syntax;
+﻿using MusicTime.Core.Tests.DI;
+using Ninject.Syntax;
 
 namespace MusicTime.Core.Tests.Steps
 {
