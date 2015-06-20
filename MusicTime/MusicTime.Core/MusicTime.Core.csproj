@@ -51,10 +51,13 @@
     <Compile Include="Abstract\Storage\IRepository.cs" />
     <Compile Include="Abstract\Storage\IUnitOfWork.cs" />
     <Compile Include="Concrete\Commands\CreatePlaylistCommand.cs" />
+    <Compile Include="Concrete\Commands\CreateSongCommand.cs" />
     <Compile Include="Concrete\Commands\UpdatePlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\ValidationCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Entities\Playlist.cs" />
+    <Compile Include="Concrete\Entities\Song.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
+    <Compile Include="Concrete\Handlers\Commands\CreateSongCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllByOwnerQueryHandler.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Concrete\Handlers\Validators\UpdatePlaylistCommandValidator.cs" />
     <Compile Include="Concrete\Queries\FindAllByOwner.cs" />
     <Compile Include="Concrete\Queries\FindAllQuery.cs" />
+    <Compile Include="Enumerations\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
