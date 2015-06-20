@@ -110,6 +110,45 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Update Playlist with empty name fails")]
+        public virtual void UpdatePlaylistWithEmptyNameFails()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Playlist with empty name fails", ((string[])(null)));
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 21
+ testRunner.Given("I am login as \'user@mail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Property"});
+            table4.AddRow(new string[] {
+                        "Name",
+                        "My coding rock"});
+            table4.AddRow(new string[] {
+                        "Description",
+                        "code like a Rockstar"});
+#line 22
+ testRunner.And("I have the following playlist in my list", ((string)(null)), table4, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Property"});
+            table5.AddRow(new string[] {
+                        "Name",
+                        ""});
+            table5.AddRow(new string[] {
+                        "Description",
+                        "Rock for Rockstars"});
+#line 26
+ testRunner.When("I update this playlist with the following information", ((string)(null)), table5, "When ");
+#line 30
+ testRunner.Then("I should see an unsuccessful update playlist error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

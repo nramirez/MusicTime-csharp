@@ -16,3 +16,16 @@ Scenario: Update Playlist correctly
 	Then My playlist list should be as follows
 	| Name            | Description        |
 	| My coding music | Rock for Rockstars |
+
+Scenario: Update Playlist with empty name fails
+	Given I am login as 'user@mail.com'
+	And I have the following playlist in my list
+	| Field       | Property             |
+	| Name        | My coding rock       |
+	| Description | code like a Rockstar |
+	When I update this playlist with the following information
+	| Field       | Property           |
+	| Name        |                    |
+	| Description | Rock for Rockstars |
+	Then I should see an unsuccessful update playlist error message 'Name is required'
+

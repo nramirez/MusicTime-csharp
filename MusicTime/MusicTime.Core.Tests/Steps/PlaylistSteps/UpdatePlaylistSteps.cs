@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using FluentValidation;
+using FluentValidation.Results;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Handlers.Queries;
 using MusicTime.Core.Concrete.Commands;
 using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Queries;
+using Should;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -15,6 +19,7 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
     public class UpdatePlaylistSteps : StepBase
     {
         private int _playlistId;
+        private IEnumerable<ValidationFailure> _errors;
 
         [Given(@"I have the following playlist in my list")]
         public void GivenIHaveTheFollowingPlaylistInMyList(Table table)
@@ -29,7 +34,14 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
         {
             var command = table.CreateInstance<UpdatePlaylistCommand>();
             command.Id = _playlistId;
-            Get<ICommandHandler<UpdatePlaylistCommand>>().Handle(command);
+            try
+            {
+                Get<ICommandHandler<UpdatePlaylistCommand>>().Handle(command);
+            }
+            catch (ValidationException ex)
+            {
+                _errors = ex.Errors;
+            }
         }
         [Then(@"My playlist list should be as follows")]
         public void ThenMyPlaylistListShouldBeAsFollows(Table table)
@@ -39,6 +51,15 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
             Get<IQueryHandler<FindAllByOwner, List<Playlist>>>().Handle(new FindAllByOwner(owner));
             table.CompareToSet(playlists);
         }
+        [Then(@"I should see an unsuccessful update playlist error message '(.*)'")]
+        public void ThenIShouldSeeAnUnsuccessfulUpdatePlaylistErrorMessage(string message)
+        {
+            _errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
+
+        }
+
+
+
         public UpdatePlaylistSteps(StepContext stepContext)
             : base(stepContext)
         {
