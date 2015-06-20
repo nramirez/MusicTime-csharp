@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using FluentValidation;
+using FluentValidation.Results;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Handlers.Queries;
@@ -6,6 +9,7 @@ using MusicTime.Core.Concrete.Commands;
 using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Queries;
 using MusicTime.Core.Enumerations;
+using Should;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -14,6 +18,8 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
     [Binding]
     public class AddSongSteps :StepBase
     {
+        private IEnumerable<ValidationFailure> _errors;
+
         [Given(@"I have the '(.*)' role")]
         public void GivenIHaveTheRole(Role role)
         {
@@ -23,7 +29,14 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
         public void WhenIAddANewSongWithTheFollowingInformation(Table table)
         {
             var command = table.CreateInstance<CreateSongCommand>();
-            Get<ICommandHandler<CreateSongCommand>>().Handle(command);
+            try
+            {
+                Get<ICommandHandler<CreateSongCommand>>().Handle(command);
+            }
+            catch (ValidationException e)
+            {
+                _errors = e.Errors;
+            }
         }
         [Then(@"the music library should be as follows")]
         public void ThenTheMusicLibraryShouldBeAsFollows(Table table)
@@ -32,7 +45,12 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
             table.CompareToSet(musicLibrary);
         }
 
-
+        [Then(@"I should see an unsuccessful add song error message '(.*)'")]
+        public void ThenIShouldSeeAnUnsuccessfulAddSongErrorMessage(string message)
+        {
+            _errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
+        }
+        
         public AddSongSteps(StepContext stepContext) : base(stepContext)
         {
         }

@@ -62,6 +62,7 @@
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllByOwnerQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Validators\CreatePlaylistCommandValidator.cs" />
+    <Compile Include="Concrete\Handlers\Validators\CreateSongCommandValidator.cs" />
     <Compile Include="Concrete\Handlers\Validators\DefaultCommandValidator.cs" />
     <Compile Include="Concrete\Handlers\Validators\UpdatePlaylistCommandValidator.cs" />
     <Compile Include="Concrete\Queries\FindAllByOwner.cs" />
