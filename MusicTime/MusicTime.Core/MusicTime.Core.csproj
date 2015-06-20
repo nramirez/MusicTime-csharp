@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=5.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.5.6.2.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,21 +45,22 @@
   <ItemGroup>
     <Compile Include="Abstract\Entities\IEntity.cs" />
     <Compile Include="Abstract\Handlers\Commands\ICommandHandler.cs" />
-    <Compile Include="Abstract\Handlers\Commands\ICommandHandlerValidationDecorator.cs" />
+    <Compile Include="Abstract\Handlers\Queries\IQueryHandler.cs" />
     <Compile Include="Abstract\Queries\IQuery.cs" />
     <Compile Include="Abstract\Storage\IRepository.cs" />
     <Compile Include="Abstract\Storage\IUnitOfWork.cs" />
     <Compile Include="Concrete\Commands\CreatePlaylistCommand.cs" />
-    <Compile Include="Concrete\Commands\ValidatorCommandHandlerDecorator.cs" />
+    <Compile Include="Concrete\Commands\ValidationCommandHandlerDecorator.cs" />
+    <Compile Include="Concrete\Entities\Playlist.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQuery.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
-    <Compile Include="Concrete\Handlers\Queries\IQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Validators\CreatePlaylistCommandValidator.cs" />
-    <Compile Include="Entities\Playlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

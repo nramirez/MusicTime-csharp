@@ -1,5 +1,5 @@
-﻿using MusicTime.Core.Abstract.Entities;
-using MusicTime.Core.Abstract.Handlers.Commands;
+﻿using FluentValidation;
+using MusicTime.Core.Abstract.Entities;
 using Ninject.Extensions.Conventions;
 using Ninject.Modules;
 
@@ -12,7 +12,7 @@ namespace MusicTime.Core.Tests.DI
              Kernel.Bind(k => k
                  .FromAssemblyContaining<IEntity>()
                  .SelectAllClasses()
-                 .InheritedFrom(typeof(IValidator<>))
+                 .InheritedFrom(typeof(AbstractValidator<>))
                  .BindAllInterfaces());
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Data.Common;
 using System.Data.Entity;
 using System.Diagnostics.CodeAnalysis;
-using MusicTime.Core.Entities;
+using MusicTime.Core.Concrete.Entities;
 
 namespace MusicTime.Storage
 {

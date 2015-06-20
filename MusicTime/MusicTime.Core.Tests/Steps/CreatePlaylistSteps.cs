@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using FluentValidation.Results;
 using MusicTime.Core.Abstract.Handlers.Commands;
+using MusicTime.Core.Abstract.Handlers.Queries;
 using MusicTime.Core.Concrete.Commands;
+using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Handlers.Queries;
-using MusicTime.Core.Entities;
 using Should;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -15,7 +18,7 @@ namespace MusicTime.Core.Tests.Steps
     {
         private string _username;
         private bool _unSuccessfulRequest;
-        private string _error;
+        private IEnumerable<ValidationFailure> _errors;
 
         [Given(@"I have registered and login as '(.*)'")]
         public void GivenIHaveRegisteredAndLoginAs(string username)
@@ -31,9 +34,9 @@ namespace MusicTime.Core.Tests.Steps
             {
                 Get<ICommandHandler<CreatePlaylistCommand>>().Handle(command);
             }
-            catch (ArgumentException ex)
+            catch (FluentValidation.ValidationException ex)
             {
-                _error = ex.Message;
+                _errors = ex.Errors;
                 _unSuccessfulRequest = true;
             }
         }
@@ -52,7 +55,7 @@ namespace MusicTime.Core.Tests.Steps
         [Then(@"I should see an unsuccessful error message '(.*)'")]
         public void ThenIShouldSeeAnUnsuccessfulErrorMessage(string message)
         {
-            _error.ShouldEqual(message);
+            _errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
         }
 
         public CreatePlaylistSteps(StepContext stepContext)

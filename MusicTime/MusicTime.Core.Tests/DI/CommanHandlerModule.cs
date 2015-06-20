@@ -11,15 +11,15 @@ namespace MusicTime.Core.Tests.DI
         public override void Load()
         {
             Bind(typeof(ICommandHandler<>))
-                .To(typeof(ValidatorCommandHandlerDecorator<>));
+                .To(typeof(ValidationCommandHandlerDecorator<>));
 
             Kernel.Bind(
                 k => k.FromAssemblyContaining<IEntity>()
                 .SelectAllClasses()
                 .InheritedFrom(typeof(ICommandHandler<>)
-                ).Excluding(typeof(ValidatorCommandHandlerDecorator<>))
+                ).Excluding(typeof(ValidationCommandHandlerDecorator<>))
                 .BindAllInterfaces()
-                .Configure(x => x.WhenInjectedInto(typeof(ValidatorCommandHandlerDecorator<>)))
+                .Configure(x => x.WhenInjectedInto(typeof(ValidationCommandHandlerDecorator<>)))
                 );
         }
     }

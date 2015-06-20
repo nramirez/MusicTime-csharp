@@ -1,6 +1,6 @@
 ﻿using MusicTime.Core.Abstract.Entities;
 
-namespace MusicTime.Core.Entities
+namespace MusicTime.Core.Concrete.Entities
 {
     public class Playlist : IEntity
     {

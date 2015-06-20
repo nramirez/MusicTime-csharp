@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using MusicTime.Core.Abstract.Handlers.Queries;
+using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Handlers.Queries;
-using MusicTime.Core.Entities;
 using Ninject.Modules;
 
 namespace MusicTime.Core.Tests.DI

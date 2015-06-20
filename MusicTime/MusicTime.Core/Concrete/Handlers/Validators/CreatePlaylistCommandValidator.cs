@@ -1,18 +1,14 @@
-﻿using System;
-using MusicTime.Core.Abstract.Handlers.Commands;
+﻿using FluentValidation;
 using MusicTime.Core.Concrete.Commands;
 
 namespace MusicTime.Core.Concrete.Handlers.Validators
 {
-    public class CreatePlaylistCommandValidator : IValidator<CreatePlaylistCommand>
+    public class CreatePlaylistCommandValidator : AbstractValidator<CreatePlaylistCommand>
     {
-        
-        public void Validate(CreatePlaylistCommand command)
+
+        public CreatePlaylistCommandValidator()
         {
-            if (String.IsNullOrEmpty(command.Name))
-            {
-                throw new ArgumentException("Name is required");
-            }
+            RuleFor(m => m.Name).NotEmpty().WithMessage("Name is required");
         }
     }
 }

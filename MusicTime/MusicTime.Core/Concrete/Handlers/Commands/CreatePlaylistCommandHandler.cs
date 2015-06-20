@@ -1,7 +1,7 @@
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Storage;
 using MusicTime.Core.Concrete.Commands;
-using MusicTime.Core.Entities;
+using MusicTime.Core.Concrete.Entities;
 
 namespace MusicTime.Core.Concrete.Handlers.Commands
 {
