@@ -149,6 +149,46 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Update Playlist with empty description fails")]
+        public virtual void UpdatePlaylistWithEmptyDescriptionFails()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Playlist with empty description fails", ((string[])(null)));
+#line 33
+this.ScenarioSetup(scenarioInfo);
+#line 34
+ testRunner.Given("I am login as \'user@mail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Property"});
+            table6.AddRow(new string[] {
+                        "Name",
+                        "My coding rock"});
+            table6.AddRow(new string[] {
+                        "Description",
+                        "code like a Rockstar"});
+#line 35
+ testRunner.And("I have the following playlist in my list", ((string)(null)), table6, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Property"});
+            table7.AddRow(new string[] {
+                        "Name",
+                        "Rock and Code"});
+            table7.AddRow(new string[] {
+                        "Description",
+                        ""});
+#line 39
+ testRunner.When("I update this playlist with the following information", ((string)(null)), table7, "When ");
+#line 43
+ testRunner.Then("I should see an unsuccessful update playlist error message \'Description is requir" +
+                    "ed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -29,3 +29,17 @@ Scenario: Update Playlist with empty name fails
 	| Description | Rock for Rockstars |
 	Then I should see an unsuccessful update playlist error message 'Name is required'
 
+	
+Scenario: Update Playlist with empty description fails
+	Given I am login as 'user@mail.com'
+	And I have the following playlist in my list
+	| Field       | Property             |
+	| Name        | My coding rock       |
+	| Description | code like a Rockstar |
+	When I update this playlist with the following information
+	| Field       | Property      |
+	| Name        | Rock and Code |
+	| Description |               |
+	Then I should see an unsuccessful update playlist error message 'Description is required'
+
+
