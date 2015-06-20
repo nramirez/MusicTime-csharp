@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Authorization\ISession.cs" />
     <Compile Include="Abstract\Entities\IEntity.cs" />
     <Compile Include="Abstract\Handlers\Commands\ICommandHandler.cs" />
     <Compile Include="Abstract\Handlers\Queries\IQueryHandler.cs" />
@@ -50,12 +51,17 @@
     <Compile Include="Abstract\Storage\IRepository.cs" />
     <Compile Include="Abstract\Storage\IUnitOfWork.cs" />
     <Compile Include="Concrete\Commands\CreatePlaylistCommand.cs" />
+    <Compile Include="Concrete\Commands\UpdatePlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\ValidationCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Entities\Playlist.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
-    <Compile Include="Concrete\Handlers\Queries\FindAllQuery.cs" />
+    <Compile Include="Concrete\Handlers\Commands\UpdatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
+    <Compile Include="Concrete\Handlers\Queries\FindAllByOwnerQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Validators\CreatePlaylistCommandValidator.cs" />
+    <Compile Include="Concrete\Handlers\Validators\DefaultCommandValidator.cs" />
+    <Compile Include="Concrete\Queries\FindAllByOwner.cs" />
+    <Compile Include="Concrete\Queries\FindAllQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

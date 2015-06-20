@@ -2,7 +2,7 @@
 
 namespace MusicTime.Core.Tests.Steps
 {
-    internal class StepBase
+    public class StepBase
     {
         private readonly StepContext _stepContext;
 

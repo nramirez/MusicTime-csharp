@@ -3,6 +3,7 @@ using System.Linq;
 using MusicTime.Core.Abstract.Entities;
 using MusicTime.Core.Abstract.Handlers.Queries;
 using MusicTime.Core.Abstract.Storage;
+using MusicTime.Core.Concrete.Queries;
 
 namespace MusicTime.Core.Concrete.Handlers.Queries
 {

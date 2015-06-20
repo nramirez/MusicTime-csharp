@@ -3,7 +3,7 @@ using Ninject.Syntax;
 
 namespace MusicTime.Core.Tests.Steps
 {
-    internal class StepContext
+    public class StepContext
     {
         private IResolutionRoot _resolutionRoot;
 

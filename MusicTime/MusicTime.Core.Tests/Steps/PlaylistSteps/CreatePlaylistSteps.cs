@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using FluentValidation.Results;
+using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Handlers.Queries;
 using MusicTime.Core.Concrete.Commands;
-using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Handlers.Queries;
+using MusicTime.Core.Concrete.Queries;
 using Should;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace MusicTime.Core.Tests.Steps
+namespace MusicTime.Core.Tests.Steps.PlaylistSteps
 {
     [Binding]
     class CreatePlaylistSteps : StepBase
@@ -20,10 +20,11 @@ namespace MusicTime.Core.Tests.Steps
         private bool _unSuccessfulRequest;
         private IEnumerable<ValidationFailure> _errors;
 
+        [Given(@"I am login as '(.*)'")]
         [Given(@"I have registered and login as '(.*)'")]
         public void GivenIHaveRegisteredAndLoginAs(string username)
         {
-            _username = username;
+            Get<ISession>().CurrentUser = username;
         }
         [When(@"I create a playlist with the following information")]
         public void WhenICreateAPlaylistWithTheFollowingInformation(Table table)
@@ -44,7 +45,7 @@ namespace MusicTime.Core.Tests.Steps
         [Then(@"My playlist list should be like follows")]
         public void ThenMyPlaylistListShouldBeLikeFollows(Table table)
         {
-            var playlists = Get<IQueryHandler<FindAllQuery, List<Playlist>>>().Handle(new FindAllQuery());
+            var playlists = Get<IQueryHandler<FindAllQuery, List<Concrete.Entities.Playlist>>>().Handle(new FindAllQuery());
             table.CompareToSet(playlists);
         }
         [Then(@"I should be informed that the playlist wasn't saved")]

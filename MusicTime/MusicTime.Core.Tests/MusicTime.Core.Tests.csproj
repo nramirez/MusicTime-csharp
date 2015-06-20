@@ -90,8 +90,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreatePlaylist.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UpdatePlaylist.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdatePlaylist.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Mocks\SessionMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\CreatePlaylistSteps.cs" />
+    <Compile Include="Steps\PlaylistSteps\CreatePlaylistSteps.cs" />
+    <Compile Include="Steps\PlaylistSteps\UpdatePlaylistSteps.cs" />
     <Compile Include="Steps\StepBase.cs" />
     <Compile Include="Steps\StepContext.cs" />
   </ItemGroup>
@@ -100,6 +107,10 @@
     <None Include="Features\CreatePlaylist.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreatePlaylist.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UpdatePlaylist.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdatePlaylist.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

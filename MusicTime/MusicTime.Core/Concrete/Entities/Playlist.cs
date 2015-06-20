@@ -7,5 +7,6 @@ namespace MusicTime.Core.Concrete.Entities
         public string Description { get; set; }
         public string Name { get; set; }
         public int Id { get; set; }
+        public string Owner { get; set; }
     }
 }
