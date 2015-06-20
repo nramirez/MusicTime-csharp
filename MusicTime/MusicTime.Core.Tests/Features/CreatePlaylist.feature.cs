@@ -100,10 +100,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a new playlist should alert that is required")]
-        public virtual void CreateANewPlaylistShouldAlertThatIsRequired()
+        [NUnit.Framework.DescriptionAttribute("Create a new playlist without name should fail")]
+        public virtual void CreateANewPlaylistWithoutNameShouldFail()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist should alert that is required", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without name should fail", ((string[])(null)));
 #line 16
 this.ScenarioSetup(scenarioInfo);
 #line 17
@@ -124,6 +124,35 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("I should be informed that the playlist wasn\'t saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.And("I should see an unsuccessful error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a new playlist without description should fail")]
+        public virtual void CreateANewPlaylistWithoutDescriptionShouldFail()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without description should fail", ((string[])(null)));
+#line 25
+this.ScenarioSetup(scenarioInfo);
+#line 26
+ testRunner.Given("I have registered and login as \'user@mail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "Name",
+                        "My EDM"});
+            table4.AddRow(new string[] {
+                        "Description",
+                        ""});
+#line 27
+ testRunner.When("I create a playlist with the following information", ((string)(null)), table4, "When ");
+#line 31
+ testRunner.Then("I should be informed that the playlist wasn\'t saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
+ testRunner.And("I should see an unsuccessful error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

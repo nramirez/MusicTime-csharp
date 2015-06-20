@@ -9,6 +9,7 @@ namespace MusicTime.Core.Concrete.Handlers.Validators
         public CreatePlaylistCommandValidator()
         {
             RuleFor(m => m.Name).NotEmpty().WithMessage("Name is required");
+            RuleFor(m => m.Description).NotEmpty().WithMessage("Description is required");
         }
     }
 }
