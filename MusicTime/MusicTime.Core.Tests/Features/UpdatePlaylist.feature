@@ -17,7 +17,7 @@ Scenario: Update Playlist correctly
 	| Name            | Description        |
 	| My coding music | Rock for Rockstars |
 
-Scenario: Update Playlist with empty name fails
+Scenario: Update Playlist with empty name
 	Given I am login as 'user@mail.com'
 	And I have the following playlist in my list
 	| Field       | Property             |
@@ -30,7 +30,7 @@ Scenario: Update Playlist with empty name fails
 	Then I should see an unsuccessful update playlist error message 'Name is required'
 
 	
-Scenario: Update Playlist with empty description fails
+Scenario: Update Playlist with empty description
 	Given I am login as 'user@mail.com'
 	And I have the following playlist in my list
 	| Field       | Property             |
@@ -41,5 +41,3 @@ Scenario: Update Playlist with empty description fails
 	| Name        | Rock and Code |
 	| Description |               |
 	Then I should see an unsuccessful update playlist error message 'Description is required'
-
-

@@ -13,7 +13,7 @@ Scenario: Create a new playlist
 	| Name   | Description          |
 	| My EDM | My EDM for the world |
 
-Scenario: Create a new playlist without name should fail
+Scenario: Create a new playlist without name
 	Given I have registered and login as 'user@mail.com'
 	When I create a playlist with the following information
 	| Field       | Value                |
@@ -22,7 +22,7 @@ Scenario: Create a new playlist without name should fail
 	Then I should be informed that the playlist wasn't saved
 	And I should see an unsuccessful error message 'Name is required'
 
-Scenario: Create a new playlist without description should fail
+Scenario: Create a new playlist without description
 	Given I have registered and login as 'user@mail.com'
 	When I create a playlist with the following information
 	| Field       | Value  |

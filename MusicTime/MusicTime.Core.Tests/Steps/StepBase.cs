@@ -10,6 +10,7 @@ namespace MusicTime.Core.Tests.Steps
         {
             _stepContext = stepContext;
         }
+
         protected T Get<T>()
         {
             return _stepContext.ResolutionRoot.Get<T>();

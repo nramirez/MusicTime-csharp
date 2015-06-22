@@ -100,10 +100,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a new playlist without name should fail")]
-        public virtual void CreateANewPlaylistWithoutNameShouldFail()
+        [NUnit.Framework.DescriptionAttribute("Create a new playlist without name")]
+        public virtual void CreateANewPlaylistWithoutName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without name should fail", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without name", ((string[])(null)));
 #line 16
 this.ScenarioSetup(scenarioInfo);
 #line 17
@@ -129,10 +129,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a new playlist without description should fail")]
-        public virtual void CreateANewPlaylistWithoutDescriptionShouldFail()
+        [NUnit.Framework.DescriptionAttribute("Create a new playlist without description")]
+        public virtual void CreateANewPlaylistWithoutDescription()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without description should fail", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without description", ((string[])(null)));
 #line 25
 this.ScenarioSetup(scenarioInfo);
 #line 26

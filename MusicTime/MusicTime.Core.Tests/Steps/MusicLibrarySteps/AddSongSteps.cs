@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 using FluentValidation.Results;
@@ -16,15 +17,18 @@ using TechTalk.SpecFlow.Assist;
 namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
 {
     [Binding]
-    public class AddSongSteps :StepBase
+    public class AddSongSteps : StepBase
     {
         private IEnumerable<ValidationFailure> _errors;
+
+        private UnauthorizedAccessException _exception;
 
         [Given(@"I have the '(.*)' role")]
         public void GivenIHaveTheRole(Role role)
         {
-            Get<ISession>().CurrentUserRole = role;
+            Get<ISession>().CurrentUserRoles.Add(role);
         }
+
         [When(@"I add a new song with the following information")]
         public void WhenIAddANewSongWithTheFollowingInformation(Table table)
         {
@@ -37,7 +41,12 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
             {
                 _errors = e.Errors;
             }
+            catch (UnauthorizedAccessException e)
+            {
+                _exception = e;
+            }
         }
+
         [Then(@"the music library should be as follows")]
         public void ThenTheMusicLibraryShouldBeAsFollows(Table table)
         {
@@ -50,8 +59,15 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
         {
             _errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
         }
-        
-        public AddSongSteps(StepContext stepContext) : base(stepContext)
+
+        [Then(@"I should recived an not authorized exception")]
+        public void ThenIShouldRecivedAnNoAuthorizedException()
+        {
+            _exception.ShouldNotBeNull();
+        }
+
+        public AddSongSteps(StepContext stepContext)
+            : base(stepContext)
         {
         }
     }

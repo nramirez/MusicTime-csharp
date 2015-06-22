@@ -17,7 +17,7 @@ Scenario: Add new song
 	| My rock song | A song I wrote for the world | 12345856_streamId_25 | Rock  |
 
 
-Scenario: Add new song without name fails
+Scenario: Add new song without name
 	Given I am login as 'admin@mail.com'
 	And I have the 'Admin' role
 	When I add a new song with the following information
@@ -28,7 +28,7 @@ Scenario: Add new song without name fails
 	| Genre       | Rock                         |
 	Then I should see an unsuccessful add song error message 'Name is required'
 
-Scenario: Add new song without description fails
+Scenario: Add new song without description
 	Given I am login as 'admin@mail.com'
 	And I have the 'Admin' role
 	When I add a new song with the following information
@@ -39,7 +39,7 @@ Scenario: Add new song without description fails
 	| Genre       | Rock                         |
 	Then I should see an unsuccessful add song error message 'Description is required'
 
-Scenario: Add new song without stream id fails
+Scenario: Add new song without stream id
 	Given I am login as 'admin@mail.com'
 	And I have the 'Admin' role
 	When I add a new song with the following information
@@ -51,7 +51,7 @@ Scenario: Add new song without stream id fails
 	Then I should see an unsuccessful add song error message 'StreamId is required'
 
 	
-Scenario: Add new song without genre fails
+Scenario: Add new song without genre
 	Given I am login as 'admin@mail.com'
 	And I have the 'Admin' role
 	When I add a new song with the following information
@@ -61,3 +61,13 @@ Scenario: Add new song without genre fails
 	| StreamId    | 12345856_streamId_25         |
 	| Genre       |                              |
 	Then I should see an unsuccessful add song error message 'Genre is required'
+
+Scenario: Add a song without being admin
+	Given I am login as 'user@mail.com'
+	When I add a new song with the following information
+	| Field       | Value                        |
+	| Name        | My rock song                 |
+	| Description | A song I wrote for the world |
+	| StreamId    | 12345856_streamId_25         |
+	| Genre       | Rock                         |
+	Then I should recived an not authorized exception

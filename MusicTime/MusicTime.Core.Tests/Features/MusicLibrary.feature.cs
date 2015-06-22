@@ -112,10 +112,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add new song without name fails")]
-        public virtual void AddNewSongWithoutNameFails()
+        [NUnit.Framework.DescriptionAttribute("Add new song without name")]
+        public virtual void AddNewSongWithoutName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without name fails", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without name", ((string[])(null)));
 #line 20
 this.ScenarioSetup(scenarioInfo);
 #line 21
@@ -147,10 +147,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add new song without description fails")]
-        public virtual void AddNewSongWithoutDescriptionFails()
+        [NUnit.Framework.DescriptionAttribute("Add new song without description")]
+        public virtual void AddNewSongWithoutDescription()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without description fails", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without description", ((string[])(null)));
 #line 31
 this.ScenarioSetup(scenarioInfo);
 #line 32
@@ -182,10 +182,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add new song without stream id fails")]
-        public virtual void AddNewSongWithoutStreamIdFails()
+        [NUnit.Framework.DescriptionAttribute("Add new song without stream id")]
+        public virtual void AddNewSongWithoutStreamId()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without stream id fails", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without stream id", ((string[])(null)));
 #line 42
 this.ScenarioSetup(scenarioInfo);
 #line 43
@@ -217,10 +217,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add new song without genre fails")]
-        public virtual void AddNewSongWithoutGenreFails()
+        [NUnit.Framework.DescriptionAttribute("Add new song without genre")]
+        public virtual void AddNewSongWithoutGenre()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without genre fails", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new song without genre", ((string[])(null)));
 #line 54
 this.ScenarioSetup(scenarioInfo);
 #line 55
@@ -247,6 +247,39 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add a new song with the following information", ((string)(null)), table6, "When ");
 #line 63
  testRunner.Then("I should see an unsuccessful add song error message \'Genre is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add a song without being admin")]
+        public virtual void AddASongWithoutBeingAdmin()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a song without being admin", ((string[])(null)));
+#line 65
+this.ScenarioSetup(scenarioInfo);
+#line 66
+ testRunner.Given("I am login as \'user@mail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table7.AddRow(new string[] {
+                        "Name",
+                        "My rock song"});
+            table7.AddRow(new string[] {
+                        "Description",
+                        "A song I wrote for the world"});
+            table7.AddRow(new string[] {
+                        "StreamId",
+                        "12345856_streamId_25"});
+            table7.AddRow(new string[] {
+                        "Genre",
+                        "Rock"});
+#line 67
+ testRunner.When("I add a new song with the following information", ((string)(null)), table7, "When ");
+#line 73
+ testRunner.Then("I should recived an not authorized exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

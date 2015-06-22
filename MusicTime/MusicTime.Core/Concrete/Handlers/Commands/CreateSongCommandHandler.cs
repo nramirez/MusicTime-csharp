@@ -1,11 +1,14 @@
 ﻿using System;
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Storage;
+using MusicTime.Core.Concrete.Attributes;
 using MusicTime.Core.Concrete.Commands;
 using MusicTime.Core.Concrete.Entities;
+using MusicTime.Core.Enumerations;
 
 namespace MusicTime.Core.Concrete.Handlers.Commands
 {
+    [Authorize(Role.Admin)]
     public class CreateSongCommandHandler : ICommandHandler<CreateSongCommand>
     {
         private readonly IRepository<Song> _repository;

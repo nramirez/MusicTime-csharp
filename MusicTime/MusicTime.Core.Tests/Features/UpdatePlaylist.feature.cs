@@ -112,10 +112,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update Playlist with empty name fails")]
-        public virtual void UpdatePlaylistWithEmptyNameFails()
+        [NUnit.Framework.DescriptionAttribute("Update Playlist with empty name")]
+        public virtual void UpdatePlaylistWithEmptyName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Playlist with empty name fails", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Playlist with empty name", ((string[])(null)));
 #line 20
 this.ScenarioSetup(scenarioInfo);
 #line 21
@@ -151,10 +151,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update Playlist with empty description fails")]
-        public virtual void UpdatePlaylistWithEmptyDescriptionFails()
+        [NUnit.Framework.DescriptionAttribute("Update Playlist with empty description")]
+        public virtual void UpdatePlaylistWithEmptyDescription()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Playlist with empty description fails", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Playlist with empty description", ((string[])(null)));
 #line 33
 this.ScenarioSetup(scenarioInfo);
 #line 34
