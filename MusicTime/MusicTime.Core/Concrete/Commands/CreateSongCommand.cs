@@ -1,5 +1,9 @@
+using MusicTime.Core.Concrete.Attributes;
+using MusicTime.Core.Enumerations;
+
 namespace MusicTime.Core.Concrete.Commands
 {
+    [Authorize(Role.Admin)]
     public class CreateSongCommand
     {
         public string Name { get; set; }

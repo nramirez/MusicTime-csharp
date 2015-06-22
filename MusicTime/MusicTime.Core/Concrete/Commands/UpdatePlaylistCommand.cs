@@ -1,6 +1,4 @@
-﻿using MusicTime.Core.Concrete.Entities;
-
-namespace MusicTime.Core.Concrete.Commands
+﻿namespace MusicTime.Core.Concrete.Commands
 {
     public class UpdatePlaylistCommand
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using MusicTime.Core.Abstract.Handlers.Queries;
 using MusicTime.Core.Abstract.Storage;

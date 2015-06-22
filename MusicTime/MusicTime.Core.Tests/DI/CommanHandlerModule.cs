@@ -1,9 +1,8 @@
 ﻿using MusicTime.Core.Abstract.Entities;
 using MusicTime.Core.Abstract.Handlers.Commands;
-using MusicTime.Core.Concrete.Commands;
-using MusicTime.Core.Concrete.Handlers.Commands.Decorators;
-using Ninject.Modules;
+using MusicTime.Core.Concrete.Handlers.Decorators;
 using Ninject.Extensions.Conventions;
+using Ninject.Modules;
 
 namespace MusicTime.Core.Tests.DI
 {

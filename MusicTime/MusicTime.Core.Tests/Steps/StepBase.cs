@@ -6,7 +6,7 @@ namespace MusicTime.Core.Tests.Steps
     {
         private readonly StepContext _stepContext;
 
-        public StepBase(StepContext stepContext)
+        protected StepBase(StepContext stepContext)
         {
             _stepContext = stepContext;
         }

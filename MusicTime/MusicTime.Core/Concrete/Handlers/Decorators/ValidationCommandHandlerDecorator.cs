@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MusicTime.Core.Abstract.Handlers.Commands;
 
-namespace MusicTime.Core.Concrete.Handlers.Commands.Decorators
+namespace MusicTime.Core.Concrete.Handlers.Decorators
 {
     public class ValidationCommandHandlerDecorator<TCommand> : ICommandHandler<TCommand>
     {

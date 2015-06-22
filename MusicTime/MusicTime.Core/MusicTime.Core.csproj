@@ -58,9 +58,9 @@
     <Compile Include="Concrete\Entities\Song.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreateSongCommandHandler.cs" />
-    <Compile Include="Concrete\Handlers\Commands\Decorators\AuthorizationCommandHandlerDecorator.cs" />
-    <Compile Include="Concrete\Handlers\Commands\Decorators\ValidationCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdatePlaylistCommandHandler.cs" />
+    <Compile Include="Concrete\Handlers\Decorators\AuthorizationCommandHandlerDecorator.cs" />
+    <Compile Include="Concrete\Handlers\Decorators\ValidationCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllByOwnerQueryHandler.cs" />
     <Compile Include="Concrete\Handlers\Validators\CreatePlaylistCommandValidator.cs" />
