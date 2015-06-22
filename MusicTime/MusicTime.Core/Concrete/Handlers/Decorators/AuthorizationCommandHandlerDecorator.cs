@@ -19,7 +19,7 @@ namespace MusicTime.Core.Concrete.Handlers.Decorators
 
         public void Handle(T command)
         {
-            var attribute = command.GetType()
+            var attribute = typeof(T)
                 .GetCustomAttributes(typeof(AuthorizeAttribute),false)
                 .FirstOrDefault() as AuthorizeAttribute;
          
