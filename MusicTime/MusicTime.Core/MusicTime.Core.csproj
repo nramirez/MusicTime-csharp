@@ -47,7 +47,6 @@
     <Compile Include="Abstract\Entities\IEntity.cs" />
     <Compile Include="Abstract\Handlers\Commands\ICommandHandler.cs" />
     <Compile Include="Abstract\Handlers\Queries\IQueryHandler.cs" />
-    <Compile Include="Abstract\Queries\IQuery.cs" />
     <Compile Include="Abstract\Storage\IRepository.cs" />
     <Compile Include="Abstract\Storage\IUnitOfWork.cs" />
     <Compile Include="Concrete\Attributes\AuthorizeAttribute.cs" />
@@ -75,6 +74,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

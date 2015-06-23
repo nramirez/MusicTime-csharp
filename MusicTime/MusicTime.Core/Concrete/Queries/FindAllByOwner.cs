@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using MusicTime.Core.Abstract.Queries;
-using MusicTime.Core.Concrete.Entities;
-
-namespace MusicTime.Core.Concrete.Queries
+﻿namespace MusicTime.Core.Concrete.Queries
 {
-    public class FindAllByOwner : IQuery<List<Playlist>>
+    public class FindAllByOwner
     {
         public FindAllByOwner(string owner)
         {
