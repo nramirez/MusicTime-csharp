@@ -14,7 +14,7 @@
 using TechTalk.SpecFlow;
 
 #pragma warning disable
-namespace MusicTime.Core.Tests.Features
+namespace MusicTime.Core.Tests.Features.Playlist
 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -121,9 +121,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
  testRunner.When("I create a playlist with the following information", ((string)(null)), table3, "When ");
 #line 22
- testRunner.Then("I should be informed that the playlist wasn\'t saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
- testRunner.And("I should see an unsuccessful error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I should see an unsuccessful error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -133,9 +131,9 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CreateANewPlaylistWithoutDescription()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new playlist without description", ((string[])(null)));
-#line 25
+#line 24
 this.ScenarioSetup(scenarioInfo);
-#line 26
+#line 25
  testRunner.Given("I have registered and login as \'user@mail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -147,12 +145,10 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "Description",
                         ""});
-#line 27
+#line 26
  testRunner.When("I create a playlist with the following information", ((string)(null)), table4, "When ");
-#line 31
- testRunner.Then("I should be informed that the playlist wasn\'t saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
- testRunner.And("I should see an unsuccessful error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.Then("I should see an unsuccessful error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

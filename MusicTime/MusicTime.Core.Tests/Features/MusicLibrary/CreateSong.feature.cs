@@ -19,20 +19,20 @@ namespace MusicTime.Core.Tests.Features.MusicLibrary
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Music Library")]
-    public partial class MusicLibraryFeature
+    [NUnit.Framework.DescriptionAttribute("Add Song in the music library")]
+    public partial class AddSongInTheMusicLibraryFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AddSong.feature"
+#line 1 "CreateSong.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Music Library", "In order to allow users to create their playlist\r\nAs an admin\r\nI want to be able " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Add Song in the music library", "In order to allow users to create their playlist\r\nAs an admin\r\nI want to be able " +
                     "to provide them a repository of songs", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -141,7 +141,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.When("I add a new song with the following information", ((string)(null)), table3, "When ");
 #line 29
- testRunner.Then("I should see an unsuccessful add song error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -176,7 +176,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 34
  testRunner.When("I add a new song with the following information", ((string)(null)), table4, "When ");
 #line 40
- testRunner.Then("I should see an unsuccessful add song error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -211,7 +211,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
  testRunner.When("I add a new song with the following information", ((string)(null)), table5, "When ");
 #line 51
- testRunner.Then("I should see an unsuccessful add song error message \'StreamId is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'StreamId is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -246,7 +246,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 57
  testRunner.When("I add a new song with the following information", ((string)(null)), table6, "When ");
 #line 63
- testRunner.Then("I should see an unsuccessful add song error message \'Genre is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Genre is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

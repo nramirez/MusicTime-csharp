@@ -85,25 +85,25 @@
     <Compile Include="DI\QueryModule.cs" />
     <Compile Include="DI\StorageModule.cs" />
     <Compile Include="DI\ValidatorModule.cs" />
-    <Compile Include="Features\CreatePlaylist.feature.cs">
+    <Compile Include="Features\MusicLibrary\CreateSong.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreatePlaylist.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\MusicLibrary\AddSong.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AddSong.feature</DependentUpon>
+      <DependentUpon>CreateSong.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\MusicLibrary\UpdateSong.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateSong.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\UpdatePlaylist.feature.cs">
+    <Compile Include="Features\Playlist\CreatePlaylist.feature.cs">
+      <DependentUpon>CreatePlaylist.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Playlist\UpdatePlaylist.feature.cs">
       <DependentUpon>UpdatePlaylist.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Mocks\SessionMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,18 +116,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\CreatePlaylist.feature">
+    <None Include="Features\MusicLibrary\CreateSong.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreatePlaylist.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\MusicLibrary\AddSong.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateSong.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\MusicLibrary\UpdateSong.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateSong.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\UpdatePlaylist.feature">
+    <None Include="Features\Playlist\CreatePlaylist.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreatePlaylist.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Playlist\UpdatePlaylist.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePlaylist.feature.cs</LastGenOutput>
     </None>

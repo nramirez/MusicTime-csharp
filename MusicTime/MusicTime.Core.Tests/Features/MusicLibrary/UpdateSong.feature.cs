@@ -177,7 +177,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 35
  testRunner.When("I update this song information as follows", ((string)(null)), table5, "When ");
 #line 41
- testRunner.Then("I should see an unsuccessful add song error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -230,7 +230,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 52
  testRunner.When("I update this song information as follows", ((string)(null)), table7, "When ");
 #line 58
- testRunner.Then("I should see an unsuccessful add song error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -283,7 +283,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 69
  testRunner.When("I update this song information as follows", ((string)(null)), table9, "When ");
 #line 75
- testRunner.Then("I should see an unsuccessful add song error message \'StreamId is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'StreamId is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -336,7 +336,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 87
  testRunner.When("I update this song information as follows", ((string)(null)), table11, "When ");
 #line 93
- testRunner.Then("I should see an unsuccessful add song error message \'Genre is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Genre is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

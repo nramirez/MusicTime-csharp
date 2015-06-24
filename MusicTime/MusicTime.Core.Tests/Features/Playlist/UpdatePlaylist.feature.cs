@@ -14,7 +14,7 @@
 using TechTalk.SpecFlow;
 
 #pragma warning disable
-namespace MusicTime.Core.Tests.Features
+namespace MusicTime.Core.Tests.Features.Playlist
 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -145,7 +145,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 26
  testRunner.When("I update this playlist with the following information", ((string)(null)), table5, "When ");
 #line 30
- testRunner.Then("I should see an unsuccessful update playlist error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Name is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -184,8 +184,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 39
  testRunner.When("I update this playlist with the following information", ((string)(null)), table7, "When ");
 #line 43
- testRunner.Then("I should see an unsuccessful update playlist error message \'Description is requir" +
-                    "ed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an unsuccessful error message \'Description is required\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

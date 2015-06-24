@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using FluentValidation;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Handlers.Commands;
@@ -49,13 +48,7 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
             var musicLibrary = Get<IQueryHandler<FindAllQuery, List<Song>>>().Handle(new FindAllQuery());
             table.CompareToSet(musicLibrary);
         }
-
-        [Then(@"I should see an unsuccessful add song error message '(.*)'")]
-        public void ThenIShouldSeeAnUnsuccessfulAddSongErrorMessage(string message)
-        {
-            GetValidationExeption().Errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
-        }
-
+        
         [Then(@"I should recived an not authorized exception")]
         public void ThenIShouldRecivedAnNoAuthorizedException()
         {

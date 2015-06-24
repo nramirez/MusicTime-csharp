@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using FluentValidation.Results;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Handlers.Queries;
@@ -17,8 +16,6 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
     [Binding]
     class CreatePlaylistSteps : StepBase
     {
-        private bool _unSuccessfulRequest;
-        private IEnumerable<ValidationFailure> _errors;
 
         [Given(@"I am login as '(.*)'")]
         [Given(@"I have registered and login as '(.*)'")]
@@ -31,15 +28,13 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
         public void WhenICreateAPlaylistWithTheFollowingInformation(Table table)
         {
             var command = table.CreateInstance<CreatePlaylistCommand>();
-            _unSuccessfulRequest = false;
             try
             {
                 Get<ICommandHandler<CreatePlaylistCommand>>().Handle(command);
             }
             catch (ValidationException ex)
             {
-                _errors = ex.Errors;
-                _unSuccessfulRequest = true;
+                SetValidationException(ex);
             }
         }
 
@@ -49,15 +44,10 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
             var playlists = Get<IQueryHandler<FindAllQuery, List<Playlist>>>().Handle(new FindAllQuery());
             table.CompareToSet(playlists);
         }
-        [Then(@"I should be informed that the playlist wasn't saved")]
-        public void ThenIShouldBeInformedThatThePlaylistWasnTSaved()
-        {
-            _unSuccessfulRequest.ShouldBeTrue();
-        }
         [Then(@"I should see an unsuccessful error message '(.*)'")]
         public void ThenIShouldSeeAnUnsuccessfulErrorMessage(string message)
         {
-            _errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
+            GetValidationExeption().Errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
         }
 
         public CreatePlaylistSteps(StepContext stepContext)
