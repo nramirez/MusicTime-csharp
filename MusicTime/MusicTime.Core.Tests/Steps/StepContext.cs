@@ -1,4 +1,6 @@
-﻿using MusicTime.Core.Tests.DI;
+﻿using System;
+using FluentValidation;
+using MusicTime.Core.Tests.DI;
 using Ninject.Syntax;
 
 namespace MusicTime.Core.Tests.Steps
@@ -11,5 +13,8 @@ namespace MusicTime.Core.Tests.Steps
         {
             get { return _resolutionRoot ?? (_resolutionRoot = ContainerFactory.CreateKernel()); }
         }
+
+        public ValidationException ValidationException { get; set; }
+        public UnauthorizedAccessException UnauthorizedAccessException { get; set; }
     }
 }

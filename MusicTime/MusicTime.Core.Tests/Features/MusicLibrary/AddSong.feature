@@ -1,4 +1,4 @@
-﻿Feature: Music Library
+﻿Feature: Add Song in the music library
 	In order to allow users to create their playlist
 	As an admin
 	I want to be able to provide them a repository of songs 

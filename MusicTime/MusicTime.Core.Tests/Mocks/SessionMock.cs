@@ -8,11 +8,16 @@ namespace MusicTime.Core.Tests.Mocks
     public class SessionMock : ISession
     {
         private List<Role> _currentUserRoles;
+        private string _currentUser;
 
         public string CurrentUser
         {
-            get;
-            set;
+            get { return _currentUser; }
+            set
+            {
+                _currentUserRoles = null;
+                _currentUser = value;
+            }
         }
 
         public List<Role> CurrentUserRoles

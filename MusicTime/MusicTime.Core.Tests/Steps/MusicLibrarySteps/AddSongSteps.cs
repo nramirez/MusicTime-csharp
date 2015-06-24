@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using FluentValidation.Results;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Handlers.Commands;
 using MusicTime.Core.Abstract.Handlers.Queries;
@@ -19,9 +18,6 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
     [Binding]
     public class AddSongSteps : StepBase
     {
-        private IEnumerable<ValidationFailure> _errors;
-
-        private UnauthorizedAccessException _exception;
 
         [Given(@"I have the '(.*)' role")]
         public void GivenIHaveTheRole(Role role)
@@ -39,11 +35,11 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
             }
             catch (ValidationException e)
             {
-                _errors = e.Errors;
+               SetValidationException(e);
             }
             catch (UnauthorizedAccessException e)
             {
-                _exception = e;
+                SetUnauthorizedAccessException(e);
             }
         }
 
@@ -57,13 +53,13 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
         [Then(@"I should see an unsuccessful add song error message '(.*)'")]
         public void ThenIShouldSeeAnUnsuccessfulAddSongErrorMessage(string message)
         {
-            _errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
+            GetValidationExeption().Errors.Any(e => e.ErrorMessage == message).ShouldBeTrue();
         }
 
         [Then(@"I should recived an not authorized exception")]
         public void ThenIShouldRecivedAnNoAuthorizedException()
         {
-            _exception.ShouldNotBeNull();
+            GetUnauthorizedAccessException().ShouldNotBeNull();
         }
 
         public AddSongSteps(StepContext stepContext)

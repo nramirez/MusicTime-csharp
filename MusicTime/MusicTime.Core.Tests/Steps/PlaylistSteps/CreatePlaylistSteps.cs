@@ -22,6 +22,7 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
 
         [Given(@"I am login as '(.*)'")]
         [Given(@"I have registered and login as '(.*)'")]
+        [Given(@"my friend login as '(.*)'")]
         public void GivenIHaveRegisteredAndLoginAs(string username)
         {
             Get<ISession>().CurrentUser = username;

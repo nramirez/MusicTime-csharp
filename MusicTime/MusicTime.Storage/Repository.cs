@@ -24,12 +24,17 @@ namespace MusicTime.Storage
         {
             Set.Add(entity);
         }
-       
+
+        public T Single(int id)
+        {
+            return Set.Single(e => e.Id == id);
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return Set.GetEnumerator();
         }
-         [ExcludeFromCodeCoverage]
+        [ExcludeFromCodeCoverage]
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

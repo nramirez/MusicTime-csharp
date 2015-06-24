@@ -14,7 +14,7 @@
 using TechTalk.SpecFlow;
 
 #pragma warning disable
-namespace MusicTime.Core.Tests.Features
+namespace MusicTime.Core.Tests.Features.MusicLibrary
 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,7 +25,7 @@ namespace MusicTime.Core.Tests.Features
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "MusicLibrary.feature"
+#line 1 "AddSong.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
