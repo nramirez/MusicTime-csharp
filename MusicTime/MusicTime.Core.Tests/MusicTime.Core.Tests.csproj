@@ -105,6 +105,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Features\Playlist\RemoveSongFromPlaylist.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemoveSongFromPlaylist.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Playlist\UpdatePlaylist.feature.cs">
       <DependentUpon>UpdatePlaylist.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -114,6 +119,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\MusicLibrarySteps\AddSongToPlaylistSteps.cs" />
     <Compile Include="Steps\MusicLibrarySteps\AddSongSteps.cs" />
+    <Compile Include="Steps\MusicLibrarySteps\RemoveSongFromPlaylistSteps.cs" />
     <Compile Include="Steps\MusicLibrarySteps\UpdateSongSteps.cs" />
     <Compile Include="Steps\PlaylistSteps\CreatePlaylistSteps.cs" />
     <Compile Include="Steps\PlaylistSteps\UpdatePlaylistSteps.cs" />
@@ -137,6 +143,10 @@
     <None Include="Features\Playlist\CreatePlaylist.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreatePlaylist.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Playlist\RemoveSongFromPlaylist.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RemoveSongFromPlaylist.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Playlist\UpdatePlaylist.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

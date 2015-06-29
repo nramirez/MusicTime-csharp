@@ -10,5 +10,6 @@ namespace MusicTime.Core.Abstract.Storage
         void Add(T entity);
         T Single(int id);
         IQueryable<T> Where(Expression<Func<T, bool>> lambdaFilter);
+        void Remove(T entity);
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="Concrete\Attributes\AuthorizeAttribute.cs" />
     <Compile Include="Concrete\Commands\CreatePlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\CreateSongCommand.cs" />
+    <Compile Include="Concrete\Commands\RemoveSongFromPlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\UpdatePlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\UpdateSongCommand.cs" />
     <Compile Include="Concrete\Entities\Playlist.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Concrete\Handlers\Commands\AddSongToPlaylistCommand.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreateSongCommandHandler.cs" />
+    <Compile Include="Concrete\Handlers\Commands\RemoveSongFromPlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdateSongCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Decorators\AuthorizationCommandHandlerDecorator.cs" />

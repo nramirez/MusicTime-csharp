@@ -6,6 +6,7 @@ using MusicTime.Core.Abstract.Storage;
 using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Handlers.Commands;
 using MusicTime.Core.Concrete.Queries;
+using MusicTime.Storage;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -49,7 +50,8 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
         public void ThenSongsInMyPlaylistShouldBeAsFollow(string playlistName, Table table)
         {
             var playlist = GetFirstPlaylistByName(playlistName);
-            var songs = playlist.Songs.Select(s => s.Song);
+            var context = Get<MusicTimeDbContext>().PlaylistSongs;
+            var songs = playlist.Songs.Select(s => s.Song).ToList();
             table.CompareToSet(songs);
 
         }

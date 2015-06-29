@@ -33,6 +33,11 @@ namespace MusicTime.Storage
             return Set.Where(lambdaFilter);
         }
 
+        public void Remove(T entity)
+        {
+            Set.Remove(entity);
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return Set.GetEnumerator();
