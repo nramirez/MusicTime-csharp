@@ -21,7 +21,7 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
         public void GivenTheFollowingSongIsInMyLibrary(Table table)
         {
             Get<ICommandHandler<CreateSongCommand>>().Handle(table.CreateInstance<CreateSongCommand>());
-           _songId = Get<IQueryHandler<FindAllQuery, List<Song>>>().Handle(new FindAllQuery()).First().Id;
+           _songId = Get<IQueryHandler<FindAllQuery<Song>, List<Song>>>().Handle(new FindAllQuery<Song>()).First().Id;
         }
         [When(@"I update this song information as follows")]
         [When(@"he tries to update this song information as follows")]

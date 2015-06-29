@@ -18,8 +18,6 @@ namespace MusicTime.Storage
         {
             _dbcontext = context;
         }
-
-
         public void Add(T entity)
         {
             Set.Add(entity);
@@ -28,6 +26,11 @@ namespace MusicTime.Storage
         public T Single(int id)
         {
             return Set.Single(e => e.Id == id);
+        }
+
+        public IQueryable<T> Where(Expression<Func<T, bool>> lambdaFilter)
+        {
+            return Set.Where(lambdaFilter);
         }
 
         public IEnumerator<T> GetEnumerator()

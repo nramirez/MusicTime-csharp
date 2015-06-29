@@ -19,8 +19,8 @@ namespace MusicTime.Core.Tests.DI
                 .InheritedFrom(typeof(IQueryHandler<,>))
                 .BindAllInterfaces());
 
-            Bind(typeof(IQueryHandler<FindAllQuery, List<Playlist>>)).To(typeof(FindAllQueryHandler<Playlist>));
-            Bind(typeof (IQueryHandler<FindAllQuery, List<Song>>)).To(typeof (FindAllQueryHandler<Song>));
+            Bind(typeof(IQueryHandler<FindAllQuery<Playlist>, List<Playlist>>)).To(typeof(FindAllQueryHandler<Playlist>));
+            Bind(typeof (IQueryHandler<FindAllQuery<Song>, List<Song>>)).To(typeof (FindAllQueryHandler<Song>));
         }
     }
 }

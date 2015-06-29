@@ -45,7 +45,7 @@ namespace MusicTime.Core.Tests.Steps.MusicLibrarySteps
         [Then(@"the music library should be as follows")]
         public void ThenTheMusicLibraryShouldBeAsFollows(Table table)
         {
-            var musicLibrary = Get<IQueryHandler<FindAllQuery, List<Song>>>().Handle(new FindAllQuery());
+            var musicLibrary = Get<IQueryHandler<FindAllQuery<Song>, List<Song>>>().Handle(new FindAllQuery<Song>());
             table.CompareToSet(musicLibrary);
         }
         

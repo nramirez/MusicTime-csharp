@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateSong.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Playlist\AddSongToPlaylist.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddSongToPlaylist.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Playlist\CreatePlaylist.feature.cs">
       <DependentUpon>CreatePlaylist.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -107,6 +112,7 @@
     </Compile>
     <Compile Include="Mocks\SessionMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\MusicLibrarySteps\AddSongToPlaylistSteps.cs" />
     <Compile Include="Steps\MusicLibrarySteps\AddSongSteps.cs" />
     <Compile Include="Steps\MusicLibrarySteps\UpdateSongSteps.cs" />
     <Compile Include="Steps\PlaylistSteps\CreatePlaylistSteps.cs" />
@@ -123,6 +129,10 @@
     <None Include="Features\MusicLibrary\UpdateSong.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateSong.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Playlist\AddSongToPlaylist.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddSongToPlaylist.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Playlist\CreatePlaylist.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

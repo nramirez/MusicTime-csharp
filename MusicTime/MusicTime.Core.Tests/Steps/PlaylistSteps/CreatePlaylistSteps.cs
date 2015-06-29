@@ -41,7 +41,7 @@ namespace MusicTime.Core.Tests.Steps.PlaylistSteps
         [Then(@"My playlist list should be like follows")]
         public void ThenMyPlaylistListShouldBeLikeFollows(Table table)
         {
-            var playlists = Get<IQueryHandler<FindAllQuery, List<Playlist>>>().Handle(new FindAllQuery());
+            var playlists = Get<IQueryHandler<FindAllQuery<Playlist>, List<Playlist>>>().Handle(new FindAllQuery<Playlist>());
             table.CompareToSet(playlists);
         }
         [Then(@"I should see an unsuccessful error message '(.*)'")]

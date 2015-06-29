@@ -7,7 +7,7 @@ using MusicTime.Core.Concrete.Queries;
 
 namespace MusicTime.Core.Concrete.Handlers.Queries
 {
-    public class FindAllQueryHandler<T> : IQueryHandler<FindAllQuery, List<T>> where T : IEntity
+    public class FindAllQueryHandler<T> : IQueryHandler<FindAllQuery<T>, List<T>> where T : IEntity
     {
         private readonly IRepository<T> _repository;
 
@@ -16,9 +16,9 @@ namespace MusicTime.Core.Concrete.Handlers.Queries
             _repository = repository;
         }
 
-        public List<T> Handle(FindAllQuery query)
+        public List<T> Handle(FindAllQuery<T> query)
         {
-            return _repository.ToList();
+            return query.LambdaFilter != null ? _repository.Where(query.LambdaFilter).ToList() : _repository.ToList();
         }
     }
 }

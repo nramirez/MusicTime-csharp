@@ -55,7 +55,10 @@
     <Compile Include="Concrete\Commands\UpdatePlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\UpdateSongCommand.cs" />
     <Compile Include="Concrete\Entities\Playlist.cs" />
+    <Compile Include="Concrete\Entities\PlaylistSong.cs" />
     <Compile Include="Concrete\Entities\Song.cs" />
+    <Compile Include="Concrete\Handlers\AddSongToPlylistCommandHandler.cs" />
+    <Compile Include="Concrete\Handlers\Commands\AddSongToPlaylistCommand.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreateSongCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdatePlaylistCommandHandler.cs" />
