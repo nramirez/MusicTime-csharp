@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Authentication\ISignInManager.cs" />
+    <Compile Include="Abstract\Authentication\IUserManager.cs" />
     <Compile Include="Abstract\Authorization\ISession.cs" />
     <Compile Include="Abstract\Entities\IEntity.cs" />
     <Compile Include="Abstract\Handlers\Commands\ICommandHandler.cs" />
@@ -55,9 +57,11 @@
     <Compile Include="Concrete\Commands\RemoveSongFromPlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\UpdatePlaylistCommand.cs" />
     <Compile Include="Concrete\Commands\UpdateSongCommand.cs" />
+    <Compile Include="Concrete\Commands\RegisterUserCommand.cs" />
     <Compile Include="Concrete\Entities\Playlist.cs" />
     <Compile Include="Concrete\Entities\PlaylistSong.cs" />
     <Compile Include="Concrete\Entities\Song.cs" />
+    <Compile Include="Concrete\Entities\User.cs" />
     <Compile Include="Concrete\Handlers\AddSongToPlylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\AddSongToPlaylistCommand.cs" />
     <Compile Include="Concrete\Handlers\Commands\CreatePlaylistCommandHandler.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="Concrete\Handlers\Commands\RemoveSongFromPlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdatePlaylistCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Commands\UpdateSongCommandHandler.cs" />
+    <Compile Include="Concrete\Handlers\Commands\RegisterUserCommandHandler.cs" />
     <Compile Include="Concrete\Handlers\Decorators\AuthorizationCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Handlers\Decorators\ValidationCommandHandlerDecorator.cs" />
     <Compile Include="Concrete\Handlers\Queries\FindAllQueryHandler.cs" />
@@ -82,7 +87,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

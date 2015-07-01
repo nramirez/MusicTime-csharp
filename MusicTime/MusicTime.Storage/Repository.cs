@@ -18,9 +18,9 @@ namespace MusicTime.Storage
         {
             _dbcontext = context;
         }
-        public void Add(T entity)
+        public T Add(T entity)
         {
-            Set.Add(entity);
+            return Set.Add(entity);
         }
 
         public T Single(int id)

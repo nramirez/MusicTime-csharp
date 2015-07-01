@@ -25,6 +25,8 @@ namespace MusicTime.Core.Tests.DI
 
             kernel.Bind<ISession>().To<SessionMock>().InThreadScope();
 
+            kernel.Load<AuthenticationModule>();
+
             return kernel;
         }
     }
