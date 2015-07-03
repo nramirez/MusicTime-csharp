@@ -3,7 +3,7 @@ using System.Linq;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Enumerations;
 
-namespace MusicTime.Core.Tests.Mocks
+namespace MusicTime.DI.Mocks
 {
     public class SessionMock : ISession
     {

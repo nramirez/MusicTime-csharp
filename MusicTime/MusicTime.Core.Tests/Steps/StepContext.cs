@@ -1,6 +1,6 @@
 ﻿using System;
 using FluentValidation;
-using MusicTime.Core.Tests.DI;
+using MusicTime.DI;
 using Ninject.Syntax;
 
 namespace MusicTime.Core.Tests.Steps

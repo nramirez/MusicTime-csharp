@@ -4,12 +4,12 @@ using MusicTime.Core.Abstract.Handlers.Queries;
 using MusicTime.Core.Concrete.Entities;
 using MusicTime.Core.Concrete.Handlers.Queries;
 using MusicTime.Core.Concrete.Queries;
-using Ninject.Extensions.Conventions;
 using Ninject.Modules;
+using Ninject.Extensions.Conventions;
 
-namespace MusicTime.Core.Tests.DI
+namespace MusicTime.DI
 {
-    public class QueryModule : NinjectModule
+    public class QueryModule : NinjectModule, INinjectModule
     {
         public override void Load()
         {

@@ -77,6 +77,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,12 +89,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DI\AuthenticationModule.cs" />
-    <Compile Include="DI\CommanHandlerModule.cs" />
-    <Compile Include="DI\ContainerFactory.cs" />
-    <Compile Include="DI\QueryModule.cs" />
-    <Compile Include="DI\StorageModule.cs" />
-    <Compile Include="DI\ValidatorModule.cs" />
     <Compile Include="Features\Authentication\UserRegistration.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,7 +124,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Mocks\SessionMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\Authentication\UserRegistrationSteps.cs" />
     <Compile Include="Steps\MusicLibrarySteps\AddSongToPlaylistSteps.cs" />
@@ -181,6 +175,10 @@
     <ProjectReference Include="..\MusicTime.Core\MusicTime.Core.csproj">
       <Project>{977B5325-6A32-45BD-A81F-12BF52FD5141}</Project>
       <Name>MusicTime.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MusicTime.DI\MusicTime.DI.csproj">
+      <Project>{799f6d6a-e8fb-4dd0-8653-ec37600a9e45}</Project>
+      <Name>MusicTime.DI</Name>
     </ProjectReference>
     <ProjectReference Include="..\MusicTime.Storage\MusicTime.Storage.csproj">
       <Project>{E9BA224B-0C4E-4188-AFFC-42D2BFCD8B31}</Project>

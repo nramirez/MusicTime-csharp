@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
 using MusicTime.Authentication.Identity;
 using MusicTime.Authentication.Identity.Models;
 using MusicTime.Authentication.Identity.Stores;
 using MusicTime.Core.Abstract.Authentication;
 using Ninject.Modules;
 
-namespace MusicTime.Core.Tests.DI
+namespace MusicTime.DI
 {
     public class AuthenticationModule : NinjectModule
     {
@@ -15,7 +14,7 @@ namespace MusicTime.Core.Tests.DI
             Bind<IUserManager>().To<UserManager>();
             Bind<IUserStore<IdentityUser, int>>().To<UserStore>();
             Bind<ISignInManager>().To<SignInManager>();
-            Bind<IAuthenticationManager>().To<AuthenticationManager>();
+            //SBind<IAuthenticationManager>().To(HttpContext.GetOwinContext().Authentication);
         }
     }
 }
