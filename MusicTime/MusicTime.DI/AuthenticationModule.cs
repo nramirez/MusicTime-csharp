@@ -13,8 +13,8 @@ namespace MusicTime.DI
         {
             Bind<IUserManager>().To<UserManager>();
             Bind<IUserStore<IdentityUser, int>>().To<UserStore>();
-            Bind<ISignInManager>().To<SignInManager>();
-            //SBind<IAuthenticationManager>().To(HttpContext.GetOwinContext().Authentication);
+            Bind<ISignInManager>().To<InMemorySignInManager>();
         }
     }
+
 }

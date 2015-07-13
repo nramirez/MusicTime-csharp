@@ -23,7 +23,7 @@ namespace MusicTime.DI
 
             kernel.Load<QueryModule>();
 
-            kernel.Bind<ISession>().To<SessionMock>().InThreadScope();
+            kernel.Bind<ISession>().To<FakeSession>().InThreadScope();
 
             kernel.Load<AuthenticationModule>();
 

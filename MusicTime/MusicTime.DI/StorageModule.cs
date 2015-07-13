@@ -7,7 +7,7 @@ using Ninject.Modules;
 
 namespace MusicTime.DI
 {
-    public class StorageModule : NinjectModule, INinjectModule
+    public class StorageModule : NinjectModule
     {
         public override void Load()
         {

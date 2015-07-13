@@ -5,7 +5,7 @@ using MusicTime.Core.Enumerations;
 
 namespace MusicTime.DI.Mocks
 {
-    public class SessionMock : ISession
+    public class FakeSession : ISession
     {
         private List<Role> _currentUserRoles;
         private string _currentUser;
