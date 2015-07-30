@@ -3,9 +3,9 @@ using System.Linq;
 using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Enumerations;
 
-namespace MusicTime.Core.Tests.Mocks
+namespace MusicTime.DI.Mocks
 {
-    public class SessionMock : ISession
+    public class FakeSession : ISession
     {
         private List<Role> _currentUserRoles;
         private string _currentUser;

@@ -4,9 +4,9 @@ using MusicTime.Core.Concrete.Handlers.Decorators;
 using Ninject.Extensions.Conventions;
 using Ninject.Modules;
 
-namespace MusicTime.Core.Tests.DI
+namespace MusicTime.DI
 {
-    public class CommanHandlerModule : NinjectModule
+    public class CommanHandlerModule : NinjectModule, INinjectModule
     {
         public override void Load()
         {

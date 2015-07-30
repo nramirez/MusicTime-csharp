@@ -5,7 +5,7 @@ using MusicTime.Core.Abstract.Storage;
 using MusicTime.Storage;
 using Ninject.Modules;
 
-namespace MusicTime.Core.Tests.DI
+namespace MusicTime.DI
 {
     public class StorageModule : NinjectModule
     {

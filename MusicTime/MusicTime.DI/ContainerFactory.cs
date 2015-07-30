@@ -1,13 +1,13 @@
 ﻿using MusicTime.Core.Abstract.Authorization;
 using MusicTime.Core.Abstract.Storage;
-using MusicTime.Core.Tests.Mocks;
+using MusicTime.DI.Mocks;
 using MusicTime.Storage;
 using Ninject;
 using Ninject.Syntax;
 
-namespace MusicTime.Core.Tests.DI
+namespace MusicTime.DI
 {
-    internal class ContainerFactory
+    public class ContainerFactory
     {
         public static IResolutionRoot CreateKernel()
         {
@@ -23,7 +23,9 @@ namespace MusicTime.Core.Tests.DI
 
             kernel.Load<QueryModule>();
 
-            kernel.Bind<ISession>().To<SessionMock>().InThreadScope();
+            kernel.Bind<ISession>().To<FakeSession>().InThreadScope();
+
+            kernel.Load<AuthenticationModule>();
 
             return kernel;
         }

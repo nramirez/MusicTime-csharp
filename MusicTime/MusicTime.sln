@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTime.Core.Tests", "Mus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTime.Storage", "MusicTime.Storage\MusicTime.Storage.csproj", "{E9BA224B-0C4E-4188-AFFC-42D2BFCD8B31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTime.Authentication.Identity", "MusicTime.Authentication.Identity\MusicTime.Authentication.Identity.csproj", "{8ACD1329-CE4E-46C0-898F-85A0C234568A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTime.DI", "MusicTime.DI\MusicTime.DI.csproj", "{799F6D6A-E8FB-4DD0-8653-EC37600A9E45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E9BA224B-0C4E-4188-AFFC-42D2BFCD8B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9BA224B-0C4E-4188-AFFC-42D2BFCD8B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9BA224B-0C4E-4188-AFFC-42D2BFCD8B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ACD1329-CE4E-46C0-898F-85A0C234568A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ACD1329-CE4E-46C0-898F-85A0C234568A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ACD1329-CE4E-46C0-898F-85A0C234568A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ACD1329-CE4E-46C0-898F-85A0C234568A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799F6D6A-E8FB-4DD0-8653-EC37600A9E45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799F6D6A-E8FB-4DD0-8653-EC37600A9E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799F6D6A-E8FB-4DD0-8653-EC37600A9E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799F6D6A-E8FB-4DD0-8653-EC37600A9E45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

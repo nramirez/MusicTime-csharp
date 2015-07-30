@@ -3,9 +3,9 @@ using MusicTime.Core.Abstract.Entities;
 using Ninject.Extensions.Conventions;
 using Ninject.Modules;
 
-namespace MusicTime.Core.Tests.DI
+namespace MusicTime.DI
 {
-    public class ValidatorModule : NinjectModule
+    public class ValidatorModule : NinjectModule, INinjectModule
     {
         public override void Load()
         {

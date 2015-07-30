@@ -21,5 +21,6 @@ namespace MusicTime.Storage
         public IDbSet<Playlist> Playlists { get; set; }
         public IDbSet<Song> Songs { get; set; }
         public IDbSet<PlaylistSong> PlaylistSongs { get; set; }
+        public IDbSet<User> Users { get; set; }
     }
 }
